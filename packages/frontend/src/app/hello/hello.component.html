@@ -1,0 +1,8 @@
+<div class="grid grid-cols-4 gap-4 mt-5">
+  <div class="flex flex-col items-center" *ngFor="let pokemon of pokemons">
+    <a class="button" routerLink="/pokemon/{{ pokemon.number }}">
+      <p>{{ pokemon.number }} {{ pokemon.name }}</p>
+      <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}" />
+    </a>
+  </div>
+</div>

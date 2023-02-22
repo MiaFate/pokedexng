@@ -6,6 +6,23 @@ import { pokemonsList } from './data';
 export class PokemonsService {
 
 
+    getPokemonById(id: number) {
+        // const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        // return response.data;
+        const response = pokemonsList.find((pokemon) => {
+            if (pokemon.number === id) {
+                return pokemon;
+            }
+        });
+        return response
+
+    }
+
+    getPokemonsList() {
+        return pokemonsList
+    }
+
+
     async getPokemons(limit = 151, offset = 0) {
 
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
@@ -21,21 +38,4 @@ export class PokemonsService {
         return pokemonData;
 
     }
-    getPokemonById(id: number) {
-        // const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-        // return response.data;
-        //buscar en pokemonsList igualando number con id y devolver ese json
-        const response = pokemonsList.find((pokemon) => {
-            if (pokemon.number === id) {
-                return pokemon;
-            }
-        });
-        return response
-
-    }
-    getPokemonsList() {
-
-        return pokemonsList
-    }
-
 }

@@ -16,7 +16,7 @@ export class HelloComponent {
 
   ngOnInit() {
 
-    this.http.get('https://ngbackdex.onrender.com/').subscribe((data: any) => {
+    this.http.get('https://ngbackdex.onrender.com/pokemons').subscribe((data: any) => {
       this.pokemons = data;
       console.log(this.pokemons);
     });

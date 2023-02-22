@@ -21,7 +21,7 @@ export class PokemonComponent {
     this.name = this.route.snapshot.paramMap.get("name");
     console.log(typeof (this.route.snapshot.paramMap.get("name")));
 
-    this.http.get(`https://ngbackdex.onrender.com/${this.name}`).subscribe((data: any) => {
+    this.http.get(`https://ngbackdex.onrender.com/pokemons/${this.name}`).subscribe((data: any) => {
       this.pokemon = data;
     });
   }
